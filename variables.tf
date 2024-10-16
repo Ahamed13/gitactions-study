@@ -1,6 +1,6 @@
 variable "resource_group_name" {
     type = string
-    default = "tf-rg1000" 
+    default = "tf-rg3000" 
 }
 
 variable "location" {
