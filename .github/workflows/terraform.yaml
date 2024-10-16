@@ -1,0 +1,24 @@
+name: terraform-workflow
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    terraform-job:
+        runs-on: 'ubuntu-latest'
+        env:
+            TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
+            TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
+            TF_VAR_client_id:  ${{ secrets.TF_VAR_client_id }}
+            TF_VAR_client_secret: ${{ secrets.TF_VAR_client_secret }}
+        steps:
+            - name: checkout_code
+              uses: actions/checkout@v3
+            - name: terraform-install
+              uses: hashicorp/setup-terraform@v3
+              with:
+                terraform_version: 'latest'
+
