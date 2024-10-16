@@ -22,11 +22,7 @@ jobs:
               with:
                 terraform_version: 'latest'
             - name: Terraform Init
-              run: terraform init \
-                -backend-config="resource_group_name=test-rg" \
-                -backend-config="storage_account_name=ahamedstorageaccount5000" \
-                -backend-config="container_name=terrafromcontainer" \
-                -backend-config="key=terraform.tfstate"
+              run: terraform init -backend-config="resource_group_name=test-rg" -backend-config="storage_account_name=ahamedstorageaccount5000" -backend-config="container_name=terrafromcontainer" -backend-config="key=terraform.tfstate"
             - name: terraform-validate
               run: terraform validate
             - name: terraform-plan
