@@ -2,6 +2,6 @@
 Terraform-Read-generator-modify/
 understand terraform basics/
 .terraform.lock.hcl
-providers.tf
+# providers.tf
 Terraform+Notes+PPT+16th+July+2024+-+KPLABS.pdf
 variable precedence.png
