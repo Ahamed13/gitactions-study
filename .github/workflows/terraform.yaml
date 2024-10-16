@@ -21,4 +21,10 @@ jobs:
               uses: hashicorp/setup-terraform@v3
               with:
                 terraform_version: 'latest'
+            - name: terraform-validate
+              run: terraform validate
+            - name: terraform-plan
+              run: terraform plan -out=tfplan
+            - name: terraform-apply
+              run: terraform apply -auto-approve tfplan
 
