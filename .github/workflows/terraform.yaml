@@ -57,7 +57,7 @@ jobs:
       
       steps:
         - name: output-statefile
-          run: cat {{ needs.terraform-job.outputs.get-statefile }}
+          run: cat ${{ needs.terraform-job.outputs.get-statefile }}
 
 
 
