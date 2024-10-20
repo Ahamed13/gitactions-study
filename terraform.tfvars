@@ -1,4 +1,4 @@
-resource_group_name = "tf-rg6000"
+resource_group_name = "tf-rg7000"
 location = "West US"
-app-plan = "planservice30002000"
-web-app-name = "pythonapp2000"
+app-plan = "planservice40003000"
+web-app-name = "pythonapp3000"

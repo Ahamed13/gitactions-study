@@ -39,7 +39,10 @@ jobs:
 
             - name: getting-statefile
               id: publish
-              run: find *.tfstate -type f -execdir echo 'state-file={}' >> $GITHUB_OUTPUT ';'
+              run: find *.tfstate -type f -execdir cat 'state-file={}' >> $GITHUB_OUTPUT ';'
+            
+            - name: step-output
+              run: cat ${{ steps.publish.outputs.state-file }}
 
             - name: Terrafrom-StateFile-Upload
               uses: actions/upload-artifact@v4
